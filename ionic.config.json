@@ -1,5 +1,7 @@
 {
   "name": "Notes",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
