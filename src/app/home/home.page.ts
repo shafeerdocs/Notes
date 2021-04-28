@@ -21,7 +21,8 @@ export class HomePage implements OnInit {
     const modal = await this.modalController.create({
       component: AddNoteComponent,
       cssClass: 'my-custom-modal-css',
-      backdropDismiss:false
+      backdropDismiss:false,
+      componentProps: { isUpadte: false }
     });
     modal.onDidDismiss().then(res => {
       if(res){
@@ -45,4 +46,19 @@ this.authService.deleteNote(note._id).subscribe((res)=>{
   this.getNote()
 })
   }
+
+  async update(note){
+    const modal = await this.modalController.create({
+      component: AddNoteComponent,
+      cssClass: 'my-custom-modal-css',
+      backdropDismiss:false,
+      componentProps: { isUpadte: true ,updateNote: note }
+    });
+    modal.onDidDismiss().then(res => {
+      if(res){
+        this.getNote()
+      }
+    })
+    return await modal.present();
+      }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://notesapishaz.herokuapp.com'
+  url: 'http://notesapishaz.herokuapp.com'
 };
 
 /*

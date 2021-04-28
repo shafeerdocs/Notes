@@ -143,4 +143,17 @@ export class AuthService {
       })
     );
   }
+
+  updateNote(noteId, note){
+    return this.http.put(`${this.url}/api/updatenote/${noteId}`, note).pipe(
+      catchError(e => {
+        let status = e.status;
+        if (status === 401) {
+          this.showAlert('You are not authorized for this!');
+          this.logout();
+        }
+        throw new Error(e);
+      })
+    );
+  }
 }

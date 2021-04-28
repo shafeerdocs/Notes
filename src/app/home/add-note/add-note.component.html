@@ -6,7 +6,7 @@
     <ion-text color="danger" *ngIf="Notes == '' && submit">Please enter a note</ion-text>
     <ion-row class="center">
       <ion-col>  <ion-button (click)="cancel()">Cancel</ion-button></ion-col>
-      <ion-col>      <ion-button (click)="addNote()">ADD</ion-button></ion-col>
+      <ion-col>      <ion-button (click)="addNote()">{{isUpadte ? 'Update' : 'Add'}}</ion-button></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
